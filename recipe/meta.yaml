@@ -1,6 +1,6 @@
 {% set name = "sep" %}
-{% set version = "1.0.0" %}
-{% set sha256 = "38071648b206706c90012cbf23754002c2e949299a51ed1f8392cb1b1166d1ba" %}
+{% set version = "1.0.1" %}
+{% set sha256 = "a66c24dea677b4dfb9d37955403343b5e161ef5c4191045d2c35d4b1f86c22d0" %}
 
 package:
   name: {{ name|lower }}
