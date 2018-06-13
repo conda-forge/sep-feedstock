@@ -12,17 +12,17 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install
 
 requirements:
   build:
+    - {{ compiler('c') }}
     - python
-    - numpy x.x
-    - toolchain
+    - numpy
   run:
     - python
-    - numpy x.x
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
