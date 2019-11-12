@@ -1,25 +1,23 @@
-{% set name = "sep" %}
 {% set version = "1.0.3" %}
-{% set sha256 = "a35704cffadbd042f931899a5564c539835fa7049d0cafff407d7ec7727d3aaa" %}
 
 package:
-  name: {{ name|lower }}
+  name: sep
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/s/sep/sep-{{ version }}.tar.gz
+  sha256: a35704cffadbd042f931899a5564c539835fa7049d0cafff407d7ec7727d3aaa
 
 build:
   number: 1001
-  script: python setup.py install
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
     - python
+    - pip
     - numpy
   run:
     - python
