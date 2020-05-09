@@ -9,7 +9,7 @@ source:
   sha256: a35704cffadbd042f931899a5564c539835fa7049d0cafff407d7ec7727d3aaa
 
 build:
-  number: 1001
+  number: 1002
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -29,7 +29,7 @@ test:
 
 about:
   home: https://github.com/kbarbary/sep
-  license: LGPL-3.0
+  license: LGPL-3.0-or-later
   license_family: LGPL
   license_file: licenses/LGPL_LICENSE.txt
   summary: 'Astronomical source extraction and photometry library'
