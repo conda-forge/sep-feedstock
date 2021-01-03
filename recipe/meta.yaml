@@ -1,4 +1,4 @@
-{% set version = "1.0.3" %}
+{% set version = "1.1.0" %}
 
 package:
   name: sep
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/sep/sep-{{ version }}.tar.gz
-  sha256: a35704cffadbd042f931899a5564c539835fa7049d0cafff407d7ec7727d3aaa
+  sha256: 68c2955b4b3eedb1baa8b1bcccdbaba90edc8abebc25519414914e23a08e241b
 
 build:
-  number: 1002
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -32,7 +32,7 @@ about:
   license: LGPL-3.0-or-later
   license_family: LGPL
   license_file: licenses/LGPL_LICENSE.txt
-  summary: 'Astronomical source extraction and photometry library'
+  summary: Astronomical source extraction and photometry library
   description: |
     SEP makes the core algorithms of Source Extractor available as a
     library of stand-alone functions and classes. These operate directly
