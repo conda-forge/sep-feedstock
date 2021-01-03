@@ -19,6 +19,7 @@ requirements:
     - python
     - pip
     - numpy
+    - cython
   run:
     - python
     - {{ pin_compatible('numpy') }}
