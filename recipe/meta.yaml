@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: sep
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/sep/sep-{{ version }}.tar.gz
-  sha256: 68c2955b4b3eedb1baa8b1bcccdbaba90edc8abebc25519414914e23a08e241b
+  sha256: 9548af5f13ea9bbfc3a76d15d809b7df72c31442f0c47e26daf9052c92c5ad73
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
