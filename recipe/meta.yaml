@@ -9,7 +9,7 @@ source:
   sha256: 1b6a36a554b3b315a9a96d19159f1ae39d9dad75bef510b1dc084c5aa9a4489b
 
 build:
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -19,6 +19,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
