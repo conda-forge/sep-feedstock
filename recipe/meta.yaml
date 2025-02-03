@@ -1,15 +1,15 @@
-{% set version = "1.2.1" %}
+{% set version = "1.4.0" %}
 
 package:
   name: sep
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/s/sep/sep-{{ version }}.tar.gz
-  sha256: 1b6a36a554b3b315a9a96d19159f1ae39d9dad75bef510b1dc084c5aa9a4489b
+  url: https://pypi.org/packages/source/s/sep/sep-{{ version }}.tar.gz
+  sha256: ee5da2ccc6d321934d1719023f7d3d9601734d1eae5afe7a9c436605b5042033
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -19,6 +19,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
