@@ -36,7 +36,7 @@ test:
     - sep
 
 about:
-  home: https://github.com/kbarbary/sep
+  home: https://github.com/sep-developers/sep
   license: LGPL-3.0-or-later
   license_family: LGPL
   license_file: licenses/LGPL_LICENSE.txt
@@ -48,7 +48,7 @@ about:
     is derived from the Source Extractor code base (written in C) and aims
     to produce results compatible with Source Extractor whenever possible.
   doc_url: http://sep.readthedocs.io/
-  dev_url: https://github.com/kbarbary/sep
+  dev_url: https://github.com/sep-developers/sep
 
 extra:
   recipe-maintainers:
