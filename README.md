@@ -3,13 +3,13 @@ About sep-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sep-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/kbarbary/sep
+Home: https://github.com/sep-developers/sep
 
 Package license: LGPL-3.0-or-later
 
 Summary: Astronomical source extraction and photometry library
 
-Development: https://github.com/kbarbary/sep
+Development: https://github.com/sep-developers/sep
 
 Documentation: http://sep.readthedocs.io/
 
