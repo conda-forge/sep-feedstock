@@ -1,25 +1,32 @@
-{% set version = "1.4.1" %}
+schema_version: 1
+
+context:
+  version: "1.4.1"
 
 package:
   name: sep
-  version: {{ version }}
+  version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/s/sep/sep-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/s/sep/sep-${{ version }}.tar.gz
   sha256: a0c8324ab66ee716080472cb212e4303e6c3e33b0d43763075b20d4cab793b25
 
 build:
-  number: 4
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  number: 5
+  script: ${{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
-    - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: cython
+    - if: build_platform != target_platform
+      then: numpy
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
   host:
     - python
     - pip
@@ -30,14 +37,14 @@ requirements:
   run:
     - python
 
-test:
-  imports:
-    - sep
+tests:
+  - python:
+      imports:
+        - sep
+      pip_check: false
 
 about:
-  home: https://github.com/sep-developers/sep
   license: LGPL-3.0-or-later
-  license_family: LGPL
   license_file: licenses/LGPL_LICENSE.txt
   summary: Astronomical source extraction and photometry library
   description: |
@@ -46,8 +53,9 @@ about:
     on in-memory arrays (no FITS files or configuration files). The code
     is derived from the Source Extractor code base (written in C) and aims
     to produce results compatible with Source Extractor whenever possible.
-  doc_url: http://sep.readthedocs.io/
-  dev_url: https://github.com/sep-developers/sep
+  homepage: https://github.com/sep-developers/sep
+  repository: https://github.com/sep-developers/sep
+  documentation: http://sep.readthedocs.io/
 
 extra:
   recipe-maintainers:
