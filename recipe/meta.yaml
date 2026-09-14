@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/s/sep/sep-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/s/sep/sep-{{ version }}.tar.gz
   sha256: a0c8324ab66ee716080472cb212e4303e6c3e33b0d43763075b20d4cab793b25
 
 build:
-  number: 3
+  number: 4
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
